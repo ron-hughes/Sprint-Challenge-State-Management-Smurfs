@@ -3,13 +3,23 @@ import { connect } from "react-redux";
 import { getSmurfs } from '../store/actions';
 
 
-const Smurfs = (props) => {
+const Smurfs = ({ getSmurfs, smurfs, isFetching, error}) => {
 
     useEffect(() => {
         getSmurfs()
     }, [])
     return (
         <>
+        <div className="container">
+           <div className="header">
+               Smurfs
+           </div>
+        {smurfs.map(( smurf, id ) => {
+            return (
+                <div>{smurf.name}</div>
+            )
+        })}
+        </div>
         
         </>
     )
@@ -17,7 +27,7 @@ const Smurfs = (props) => {
 
 const mapStateToProps = state => {
     return {
-      smurfs: state.quote,
+      smurfs: state.smurfs,
       isFetching: state.isFetching,
       error: state.error
     };

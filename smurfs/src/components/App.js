@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.css";
+import Smurfs  from './Smurfs';
 
 
 function App() {
  
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-    
+        <Smurfs />
       </div>
     );
 }
