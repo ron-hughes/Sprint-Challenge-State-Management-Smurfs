@@ -12,15 +12,18 @@ const Smurfs = ({ getSmurfs, smurfs, isFetching, error}) => {
         <>
         <div className="container">
            <div className="header">
-               Smurfs
+              <h1>Smurfs</h1> 
            </div>
         {smurfs.map(( smurf, id ) => {
             return (
+                <>
                 <div>{smurf.name}</div>
+                <div>{smurf.height}</div>
+                </>
             )
         })}
         </div>
-        
+        {console.log(smurfs)}
         </>
     )
 }
